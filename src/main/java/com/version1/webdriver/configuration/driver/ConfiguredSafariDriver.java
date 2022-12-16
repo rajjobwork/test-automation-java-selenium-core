@@ -1,0 +1,36 @@
+package com.version1.webdriver.configuration.driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
+
+import com.version1.webdriver.configuration.TestConfigHelper;
+
+public class ConfiguredSafariDriver implements ConfiguredDriver {
+
+    /**
+     *
+     * @return WebDriver representing RemoteWebDriver grid
+     */
+    public WebDriver getRemoteDriver() {
+        return new RemoteWebDriver(
+                TestConfigHelper.get().getGridConfig().getGridUrl(), this.getOptions());
+    }
+
+    /**
+     *
+     * @return WebDriver representing RemoteWebDriver grid
+     */
+    public WebDriver getLocalDriver() {
+        return new SafariDriver(this.getOptions());
+    }
+
+    /**
+     *
+     * @return configured options object for target browser driver
+     */
+    public SafariOptions getOptions() {
+        return new SafariOptions();
+    }
+}
