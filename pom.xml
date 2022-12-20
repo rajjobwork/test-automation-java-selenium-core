@@ -396,6 +396,8 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <configuration>
+								        <keyname>23BF92B5DC6843FE</keyname>
+										<passphraseServerId>23BF92B5DC6843FE</passphraseServerId>
                                     <gpgArguments>
                                         <arg>--pinentry-mode</arg>
                                         <arg>loopback</arg>
