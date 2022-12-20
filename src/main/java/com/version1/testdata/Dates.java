@@ -55,7 +55,7 @@ public class Dates extends MockUnitBase {
 
     /**
      * Returns boolean result on if the two given dates are within the given tolerance
-     * @param dateFormat
+     * @param Takes it as a dateFormat
      * @param baseDate
      * @param comparisonDate
      * @param toleranceInMinutes
