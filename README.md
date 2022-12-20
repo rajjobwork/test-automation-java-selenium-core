@@ -1,4 +1,4 @@
-# test-automation-java-selenium-core
+# Test Automation Java Selenium Core
 Overview
 
 The Test automation uses a mix of the core java library and the testing template repositories. We have 2 different template repositories.One is for TestNG and the other one is for cucumber.
