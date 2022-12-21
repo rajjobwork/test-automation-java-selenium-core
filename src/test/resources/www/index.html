@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>selenium-pom-framework - test page for integration tests</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                document.getElementById("clickutils-href-disabled").disabled = true;
+                setTimeout(function() {
+                    document.getElementById("clickutils-href-disabled").disabled = false;
+                }, 10000);
+                setTimeout(function() {
+                    document.getElementById("clickutils-staleelement").innerText("Text value has changed");
+                }, 1000);
+            });
+        </script>
+    </head>
+    <body>
+        <h1 id="get-text-element">Hello there!</h1>
+        <div id="FindByUtils-elements">
+            <a href="/hello-failed.html" class="findbyutils-button" style="display:none;">Button 1 (hidden)</a>
+            <a href="/hello-passed.html" class="findbyutils-button">Button 2 (displayed)</a>
+        </div>
+        <div id="RadioButtonUtils-elements">
+            <form>
+                <div class="form-group" data-test-id="radio-button-group">
+                    <input id="radio-button-value1" type="radio" value="value1">
+                    <label for="radio-button-value1">Value 1</label>
+                </div>
+                <div class="form-group" data-test-id="radio-button-group">
+                    <input id="radio-button-value2" type="radio" value="value2">
+                    <label for="radio-button-value2">Value 2</label>
+                </div>
+                <div class="form-group" data-test-id="radio-button-group">
+                    <input id="radio-button-value3" type="radio" value="value3">
+                    <label for="radio-button-value3">Value 3</label>
+                </div>
+            </form>
+        </div>
+        <div id="SelectBoxUtils-elements">
+            <select id="select-box">
+                <option id="select-box-option1" value="option1">Option 1</option>
+                <option id="select-box-option2" value="option2">Option 2</option>
+                <option id="select-box-option3" value="option3">Option 3</option>
+            </select>
+        </div>
+        <div id="ClickUtils-elements">
+            <a href="/hello-passed.html" id="clickutils-href">Click me</a>
+            <button onclick="window.location.href = '/hello-passed.html';" id="clickutils-href-disabled" disabled>Click me</button>
+            <button onclick="window.location.href = '/hello-passed.html';" id="clickutils-href-always-disabled" disabled>Click me</button>
+            <button onclick="window.location.href = '/hello-passed.html';" id="clickutils-staleelement">Click me</button>
+        </div>
+        <div id="WindowUtils-elements">
+            <a id="out-of-viewport-link" href="hello-passed.html" stype="margin-top:2000px;">Link out of viewport on page load</a>
+        </div>
+        <div id="ClearUtils-elements">
+            <input type="text" id="clear-utils-text-box" />
+        </div>
+        <a href="files/sample-file.pdf" download="sampleFile.pdf">clickHereToDownLoadAFile</a>
+    </body>
+</html>
